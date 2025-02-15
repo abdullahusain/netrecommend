@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Movie Recommendation</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .chatbot {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+        .button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Emotion-Based Movie Recommendation System</h1>
+        <div class="chatbot">
+            <p>How are you feeling today?</p>
+            <button class="button" onclick="recommendMovies('I am feeling happy')">Happy</button>
+            <button class="button" onclick="recommendMovies('I am feeling sad')">Sad</button>
+            <button class="button" onclick="recommendMovies('I am feeling angry')">Angry</button>
+            <button class="button" onclick="recommendMovies('I am feeling mixed')">Mixed Feelings</button>
+        </div>
+        <div id="recommendations"></div>
+    </div>
+    <script>
+        function recommendMovies(text) {
+            fetch('https://d105-34-105-10-49.ngrok-free.app/recommend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let recommendations = data.recommendations;
+                document.getElementById('recommendations').innerHTML = '<h2>Recommended Movies:</h2><ul>' +
+                    recommendations.map(movie => `<li>${movie}</li>`).join('') +
+                    '</ul>';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
