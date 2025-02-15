@@ -6,37 +6,74 @@
     <title>Emotion-Based Movie Recommendation</title>
     <style>
         body {
-            background-color: black;
-            color: red;
-            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #e5e5e5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #141414;
+            padding: 20px;
             text-align: center;
-            padding: 50px;
+        }
+        .header img {
+            width: 150px;
         }
         .chatbot {
-            margin: 20px auto;
-            max-width: 600px;
-            background-color: #222;
+            background-color: #333;
             padding: 20px;
             border-radius: 10px;
-            color: white;
+            text-align: center;
+            margin-bottom: 20px;
         }
         .button {
-            background-color: red;
+            background-color: #e50914;
             color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
             margin: 5px;
+            font-size: 16px;
         }
         .button:hover {
-            background-color: darkred;
+            background-color: #f40612;
+        }
+        .recommendations {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .recommendations img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #e5e5e5;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+    </div>
     <div class="container">
-        <h1>Welcome to the Emotion-Based Movie Recommendation System</h1>
+        <h1>Emotion-Based Movie Recommendation System</h1>
         <div class="chatbot">
             <p>How are you feeling today?</p>
             <button class="button" onclick="recommendMovies('I am feeling happy')">Happy</button>
@@ -44,7 +81,7 @@
             <button class="button" onclick="recommendMovies('I am feeling angry')">Angry</button>
             <button class="button" onclick="recommendMovies('I am feeling mixed')">Mixed Feelings</button>
         </div>
-        <div id="recommendations"></div>
+        <div id="recommendations" class="recommendations"></div>
     </div>
     <script>
         function recommendMovies(text) {
@@ -67,3 +104,4 @@
     </script>
 </body>
 </html>
+
