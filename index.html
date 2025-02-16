@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('images/background.jpg');
+            background-image: url('images/background.jpg'); /* Replace with the actual background image URL */
             background-size: cover;
             background-position: center;
             color: white;
@@ -19,6 +19,17 @@
             align-items: center;
             height: 100vh;
             padding: 0 50px;
+        }
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            max-width: 50px; /* Adjust the size as needed */
+            margin-right: 10px;
         }
         .welcome-text {
             max-width: 50%;
@@ -35,6 +46,7 @@
             padding: 20px;
             border-radius: 10px;
             width: 300px;
+            text-align: center;
         }
         .login-form h2 {
             margin-top: 0;
@@ -66,8 +78,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="welcome-text">
+        <div class="header">
+            <img src="images/logo.png" alt="Nettflixer Logo"> <!-- Replace with the actual logo image URL -->
             <h1>WELCOME TO NETTFLIXER</h1>
+        </div>
+        <div class="welcome-text">
             <p>Emotion-based Movie Recommender</p>
         </div>
         <div class="login-form">
