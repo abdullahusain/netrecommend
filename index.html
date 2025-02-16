@@ -3,153 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflixer: Emotion Based Movie Recommender</title>
+    <title>Nettflixer Login</title>
     <style>
         body {
-            background-color: #141414;
-            color: #e5e5e5;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            position: relative;
-        }
-        .background {
+            font-family: Arial, sans-serif;
             background-image: url('images/background.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            filter: blur(8px);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            background-position: center;
+            color: white;
         }
         .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 0 50px;
         }
-        .header {
-            background-color: #141414;
-            padding: 20px;
-            text-align: center;
+        .welcome-text {
+            max-width: 50%;
         }
-        .header img {
-            width: 150px;
+        .welcome-text h1 {
+            font-size: 48px;
+            margin: 0;
         }
-        .chatbot {
-            background-color: #333;
+        .welcome-text p {
+            font-size: 24px;
+        }
+        .login-form {
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            margin-bottom: 20px;
+            width: 300px;
         }
-        .button {
-            background-color: #e50914;
-            color: white;
+        .login-form h2 {
+            margin-top: 0;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
             border: none;
-            padding: 10px 20px;
-            cursor: pointer;
             border-radius: 5px;
-            margin: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
             font-size: 16px;
         }
-        .button:hover {
-            background-color: #f40612;
-        }
-        .recommendations {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .recommendations img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        h1, h2 {
-            color: #e5e5e5;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        .main-heading {
-            font-weight: bold;
-        }
-        .canva-embed {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-top: 62.5000%;
-            padding-bottom: 0;
-            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
-            margin-top: 1.6em;
-            margin-bottom: 0.9em;
-            overflow: hidden;
-            border-radius: 8px;
-            will-change: transform;
-        }
-        .canva-embed iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border: none;
-            padding: 0;
-            margin: 0;
+        .login-form a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="header">
-        <img src="images/logo.png" alt="Logo">
-    </div>
     <div class="container">
-        <h1 class="main-heading">Netflixer: Emotion Based Movie Recommender</h1>
-        <div class="chatbot">
-            <p>How are you feeling today?</p>
-            <button class="button" onclick="recommendMovies('I am feeling happy')">Happy</button>
-            <button class="button" onclick="recommendMovies('I am feeling sad')">Sad</button>
-            <button class="button" onclick="recommendMovies('I am feeling angry')">Angry</button>
-            <button class="button" onclick="recommendMovies('I am feeling mixed')">Mixed Feelings</button>
+        <div class="welcome-text">
+            <h1>WELCOME TO NETTFLIXER</h1>
+            <p>Emotion-based Movie Recommender</p>
         </div>
-        <div id="recommendations" class="recommendations"></div>
-        <div class="canva-embed">
-            <iframe loading="lazy"
-                src="https://www.canva.com/design/DAGfP6_2mYc/boVf9dysh5DWlF7FpiDmmw/view?embed" 
-                allowfullscreen="allowfullscreen" allow="fullscreen">
-            </iframe>
+        <div class="login-form">
+            <h2>LOGIN TO YOUR ACCOUNT</h2>
+            <form>
+                <label for="username">Username :</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email Address :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password :</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">LOGIN</button>
+            </form>
+            <a href="#">Don't have an account? Sign Up now</a>
         </div>
     </div>
-    <script>
-        function recommendMovies(text) {
-            fetch('https://91c8-34-172-229-149.ngrok-free.app/recommend', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ text })
-            })
-            .then(response => response.json())
-            .then(data => {
-                let recommendations = data.recommendations;
-                document.getElementById('recommendations').innerHTML = '<h2>Recommended Movies:</h2><ul>' +
-                    recommendations.map(movie => `<li>${movie}</li>`).join('') +
-                    '</ul>';
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
 </body>
 </html>
