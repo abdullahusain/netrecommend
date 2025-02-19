@@ -37,4 +37,86 @@ body {
 
 .login-container,
 .signup-container {
-    background-color
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 300px;
+}
+
+.login-container h1,
+.signup-container h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-container button,
+.signup-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e50914;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.login-container button:hover,
+.signup-container button:hover {
+    background-color: #f40612;
+}
+
+.signup {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup span {
+    color: white;
+    margin-right: 10px;
+}
+
+.signup-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.main-container {
+    display: none; /* Hide initially */
+}
+
+.title {
+    font-family: 'Safira March', serif;
+    font-size: 2.5em; /* Slightly smaller size */
+    color: white;
+    margin-top: 20%;
+}
+
+.emotion-selector {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 10cm;
+}
+
+.emotion-selector h1 {
+    font-family: 'DynaPuff', cursive;
+    font-size: 2em;
+    margin-bottom: 20px
