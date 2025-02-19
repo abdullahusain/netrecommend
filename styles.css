@@ -17,13 +17,14 @@ body {
 
 .netflixer-text {
     font-family: 'ITC Benguiat', serif;
-    font-size: 1.5em;
+    font-size: 3em; /* Same size as the previous 'emotion based movie recommender' */
     color: #f5c518;
+    margin-top: 10px;
 }
 
 .title {
     font-family: 'Safira March', serif;
-    font-size: 3em;
+    font-size: 2.5em; /* Slightly smaller size */
     color: white;
     margin-top: 20%;
 }
