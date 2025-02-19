@@ -106,4 +106,15 @@
         document.getElementById('logout-btn').addEventListener('click', function() {
             // Show login form and hide main page content
             document.getElementById('main-container').style.display = 'none';
-            document.getElement
+            document.getElementById('login-container').style.display = 'block';
+            document.getElementById('logout-btn').style.display = 'none';
+        });
+
+        document.getElementById('show-signup').addEventListener('click', function() {
+            // Show signup form and hide login form
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
