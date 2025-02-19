@@ -3,6 +3,10 @@ body {
     font-family: 'Roboto', sans-serif; /* Use Roboto font */
     background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .logout-btn {
@@ -28,53 +32,63 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5em; /* Same size as the previous 'emotion based movie recommender' */
     color: #f5c518;
-    margin-top: 5px; /* Move closer to logo */
+    margin-top: 5px;
 }
 
-.title {
-    font-family: 'Safira March', serif;
-    font-size: 2.5em; /* Slightly smaller size */
-    color: white;
-    margin-top: 20%;
-}
-
-.emotion-selector {
-    background: rgba(0, 0, 0, 0.7);
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    color: white;
     text-align: center;
-    width: 10cm;
+    color: white;
+    width: 300px;
 }
 
-.emotion-selector h1 {
-    font-family: 'DynaPuff', cursive;
+.login-container h1 {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-.emotion-selector p {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.emotion-selector button {
-    font-family: 'Playfair Display', serif;
-    display: block;
+.login-container input[type="text"],
+.login-container input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    font-size: 1.2em;
     border: none;
     border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e50914;
+    color: white;
+    font-size: 1em;
     cursor: pointer;
 }
 
-.happy { background-color: #ffeb3b; }
-.sad { background-color: #2196f3; }
-.angry { background-color: #f44336; }
-.mixed { background-color: #9c27b0; }
+.login-container button:hover {
+    background-color: #f40612;
+}
+
+.signup {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup span {
+    color: white;
+    margin-right: 10px;
+}
+
+.signup-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
 
 /* Responsive Design for Mobile Devices */
 @media (max-width: 768px) {
@@ -94,19 +108,18 @@ body {
         margin-top: 2px; /* Move closer to logo */
     }
 
-    .title {
-        font-size: 2em; /* Smaller size for mobile */
-        margin-top: 10%;
-    }
-
-    .emotion-selector {
+    .login-container {
         width: 100%; /* Full width for mobile */
         padding: 10px;
     }
 
-    .emotion-selector h1,
-    .emotion-selector p,
-    .emotion-selector button {
+    .login-container h1,
+    .login-container input,
+    .login-container button {
+        font-size: 1em; /* Smaller size for mobile */
+    }
+
+    .signup-btn {
         font-size: 1em; /* Smaller size for mobile */
     }
 }
