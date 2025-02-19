@@ -30,7 +30,7 @@ body {
 
 .netflixer-text {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5em; /* Same size as the previous 'emotion based movie recommender' */
+    font-size: 2.5em;
     color: #f5c518;
     margin-top: 5px;
 }
@@ -102,7 +102,7 @@ body {
 
 .title {
     font-family: 'Safira March', serif;
-    font-size: 2.5em; /* Slightly smaller size */
+    font-size: 2.5em;
     color: white;
     margin-top: 20%;
 }
@@ -119,4 +119,8 @@ body {
 .emotion-selector h1 {
     font-family: 'DynaPuff', cursive;
     font-size: 2em;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+}
+
+.emotion-selector p {
+    font-family:
