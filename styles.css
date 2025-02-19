@@ -1,55 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflixer - Emotion Based Movie Recommender</title>
-    <!-- Add Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Add Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Fredoka&family=Playfair+Display&family=ITC+Benguiat&family=Safira+March&family=Roboto&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <!-- Add custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="d-flex justify-content-between align-items-center">
-        <!-- Log Out Button -->
-        <button class="logout-btn btn btn-outline-light">Log Out</button>
-        <!-- Logo -->
-        <div class="logo">
-            <img src="images/logo.png" alt="Netflixer Logo">
-            <div class="netflixer-text">Netflixer</div>
-        </div>
-    </header>
-    <main>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="title">EMOTION BASED MOVIE RECOMMENDER</div>
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="emotion-selector">
-                        <h1>HEY THERE</h1>
-                        <p>HOW ARE YOU FEELING TODAY?</p>
-                        <button class="happy btn btn-warning">HAPPY</button>
-                        <button class="sad btn btn-primary">SAD</button>
-                        <button class="angry btn btn-danger">ANGRY</button>
-                        <button class="mixed btn btn-secondary">MIXED FEELINGS</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Placeholder for Chatbot Integration -->
-        <div id="chatbot-placeholder" class="text-center mt-4">
-            <!-- Add your chatbot integration code here -->
-        </div>
-    </main>
-    <footer>
-        <!-- Footer content here -->
-    </footer>
-    <!-- Add Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.logout-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 10px;
+}
+
+.logo {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 250px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.netflixer-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em; /* Same size as the previous 'emotion based movie recommender' */
+    color: #f5c518;
+    margin-top: 5px; /* Move closer to logo */
+}
+
+.title {
+    font-family: 'Safira March', serif;
+    font-size: 2.5em; /* Slightly smaller size */
+    color: white;
+    margin-top: 20%;
+}
+
+.emotion-selector {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 10cm;
+}
+
+.emotion-selector h1 {
+    font-family: 'DynaPuff', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.emotion-selector p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.emotion-selector button {
+    font-family: 'Playfair Display', serif;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.happy { background-color: #ffeb3b; }
+.sad { background-color: #2196f3; }
+.angry { background-color: #f44336; }
+.mixed { background-color: #9c27b0; }
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .logo {
+        text-align: right;
+        margin: 10px 20px 0 0;
+        align-items: flex-end;
+    }
+
+    .logo img {
+        width: 100px; /* Smaller width for mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .netflixer-text {
+        font-size: 1.5em; /* Smaller size for mobile */
+        margin-top: 2px; /* Move closer to logo */
+    }
+
+    .title {
+        font-size: 2em; /* Smaller size for mobile */
+        margin-top: 10%;
+    }
+
+    .emotion-selector {
+        width: 100%; /* Full width for mobile */
+        padding: 10px;
+    }
+
+    .emotion-selector h1,
+    .emotion-selector p,
+    .emotion-selector button {
+        font-size: 1em; /* Smaller size for mobile */
+    }
+}
