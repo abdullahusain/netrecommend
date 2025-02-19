@@ -42,7 +42,8 @@ body {
     border-radius: 10px;
     text-align: center;
     color: white;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .login-container h1,
@@ -105,6 +106,7 @@ body {
     font-size: 2.5em;
     color: white;
     margin-top: 20%;
+    text-align: center;
 }
 
 .emotion-selector {
@@ -113,7 +115,8 @@ body {
     border-radius: 10px;
     color: white;
     text-align: center;
-    width: 10cm;
+    width: 100%;
+    max-width: 10cm;
 }
 
 .emotion-selector h1 {
@@ -122,5 +125,4 @@ body {
     margin-bottom: 20px;
 }
 
-.emotion-selector p {
-    font-family:
+.emotion
