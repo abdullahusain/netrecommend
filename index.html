@@ -3,130 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nettflixer Login</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('images/background.jpg'); /* Replace with the actual background image file name */
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            padding: 0 50px;
-        }
-        .header {
-            position: absolute;
-            top: 20px;
-            right: 50px;
-            display: flex;
-            align-items: center;
-        }
-        .header img {
-            max-width: 50px; /* Adjust the size as needed */
-            margin-right: 10px;
-        }
-        .welcome-text {
-            max-width: 50%;
-        }
-        .welcome-text h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .welcome-text p {
-            font-size: 24px;
-        }
-        .login-form {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-        }
-        .login-form h2 {
-            margin-top: 0;
-        }
-        .login-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .login-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
-        }
-        .login-form a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .welcome-text {
-                max-width: 100%;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-            .header {
-                position: static;
-                justify-content: center;
-                margin-bottom: 20px;
-            }
-            .header img {
-                max-width: 40px;
-                margin-right: 5px;
-            }
-            .welcome-text h1 {
-                font-size: 36px;
-            }
-            .welcome-text p {
-                font-size: 18px;
-            }
-            .login-form {
-                width: 100%;
-            }
-        }
-    </style>
+    <title>Netflixer - Emotion Based Movie Recommender</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Fredoka&family=Playfair+Display&family=ITC+Benguiat&family=Safira+March&display=swap" rel="stylesheet">
+    <!-- Add custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="images/logo.png" alt="Nettflixer Logo"> <!-- Replace with the actual logo image file name -->
-            <h1>WELCOME TO NETTFLIXER</h1>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="Netflixer Logo">
         </div>
-        <div class="welcome-text">
-            <p>Emotion-based Movie Recommender</p>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="title">EMOTION BASED MOVIE RECOMMENDER</div>
+                </div>
+                <div class="col-12 text-center">
+                    <div class="emotion-selector">
+                        <h1>HEY THERE</h1>
+                        <p>HOW ARE YOU FEELING TODAY?</p>
+                        <button class="happy btn btn-warning">HAPPY</button>
+                        <button class="sad btn btn-primary">SAD</button>
+                        <button class="angry btn btn-danger">ANGRY</button>
+                        <button class="mixed btn btn-secondary">MIXED FEELINGS</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="login-form">
-            <h2>LOGIN TO YOUR ACCOUNT</h2>
-            <form>
-                <label for="username">Username :</label>
-                <input type="text" id="username" name="username" required>
-                <label for="email">Email Address :</label>
-                <input type="email" id="email" name="email" required>
-                <label for="password">Password :</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">LOGIN</button>
-            </form>
-            <a href="#">Don't have an account? Sign Up now</a>
+        <!-- Placeholder for Chatbot Integration -->
+        <div id="chatbot-placeholder" class="text-center mt-4">
+            <!-- Add your chatbot integration code here -->
         </div>
-    </div>
+    </main>
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
