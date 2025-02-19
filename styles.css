@@ -10,6 +10,17 @@ body {
     margin: 20px 0;
 }
 
+.logo img {
+    width: 250px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.netflixer-text {
+    font-family: 'ITC Benguiat', serif;
+    font-size: 1.5em;
+    color: #f5c518;
+}
+
 .title {
     font-family: 'Safira March', serif;
     font-size: 3em;
