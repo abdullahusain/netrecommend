@@ -169,4 +169,7 @@ body {
     }
 
     .signup-btn {
-        font
+        font-size: 1em; /* Smaller size for mobile */
+    }
+
+    .title
