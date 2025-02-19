@@ -1,8 +1,14 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif; /* Fallback font */
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
     background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
+}
+
+.logout-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 10px;
 }
 
 .logo {
@@ -66,3 +72,36 @@ body {
 .sad { background-color: #2196f3; }
 .angry { background-color: #f44336; }
 .mixed { background-color: #9c27b0; }
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .logo {
+        text-align: right;
+        margin: 10px 20px 0 0;
+    }
+
+    .logo img {
+        width: 150px; /* Smaller width for mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .netflixer-text {
+        font-size: 2em; /* Smaller size for mobile */
+    }
+
+    .title {
+        font-size: 2em; /* Smaller size for mobile */
+        margin-top: 10%;
+    }
+
+    .emotion-selector {
+        width: 100%; /* Full width for mobile */
+        padding: 10px;
+    }
+
+    .emotion-selector h1,
+    .emotion-selector p,
+    .emotion-selector button {
+        font-size: 1em; /* Smaller size for mobile */
+    }
+}
