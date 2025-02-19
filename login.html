@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflixer Login</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+    <!-- Add custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="d-flex justify-content-center">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="Netflixer Logo">
+            <div class="netflixer-text">Netflixer</div>
+        </div>
+    </header>
+    <main>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form action="main.html" method="get"> <!-- Redirect to main.html after login -->
+                <input type="text" name="email" placeholder="Email Id" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+            <div class="signup">
+                <span>Sign Up if not registered!</span>
+                <a href="signup.html" class="signup-btn btn btn-outline-light">Sign Up</a> <!-- Link to sign up page -->
+            </div>
+        </div>
+    </main>
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
