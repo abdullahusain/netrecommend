@@ -3,16 +3,15 @@ body {
     font-family: 'Roboto', sans-serif; /* Use Roboto font */
     background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .logout-btn {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     margin: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
 
 .logo {
@@ -77,49 +76,4 @@ body {
 
 .login-container button:hover,
 .signup-container button:hover {
-    background-color: #f40612;
-}
-
-.signup {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.signup span {
-    color: white;
-    margin-right: 10px;
-}
-
-.signup-btn {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-}
-
-.main-container {
-    display: none; /* Hide initially */
-}
-
-.title {
-    font-family: 'Safira March', serif;
-    font-size: 2.5em;
-    color: white;
-    margin-top: 20%;
-    text-align: center;
-}
-
-.emotion-selector {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    max-width: 10cm;
-}
-
-.emotion-selector h1 {
-    font-family: 'DynaPuff', cursive;
-    font-size: 2em;
-    margin-bottom: 20
+    background-color: #f406
