@@ -53,7 +53,6 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
-    height: calc(200px + 2cm); /* Increased height by 2cm */
 }
 
 .movie-image {
@@ -67,24 +66,11 @@ body {
     font-size: 1em;
 }
 
-/* Responsive Design for Mobile Devices */
-@media (max-width: 768px) {
-    .logo img {
-        width: 100px; /* Smaller width for mobile */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .netflixer-text {
-        font-size: 1.5em; /* Smaller size for mobile */
-        margin-top: 2px;
-    }
-
-    .title {
-        font-size: 1.5em; /* Smaller size for mobile */
-        margin-top: 5px;
-    }
-
-    .movie-box {
-        margin-bottom: 20px;
-    }
-}
+.login-container,
+.signup-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 
