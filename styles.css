@@ -73,8 +73,17 @@ body {
     border-radius: 10px;
     text-align: center;
     color: white;
-    width: 
-    
+}
+
+/* Emotion Box with Transparent Background */
+.emotion-box {
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+    padding: 20px;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    text-align: center;
+    display: inline-block; /* Make the box fit the content */
+}
+
 /* Centering the texts for both desktop and mobile */
 .emotion-selector {
     text-align: center;
