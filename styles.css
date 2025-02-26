@@ -74,3 +74,23 @@ body {
     text-align: center;
     color: white;
     width: 
+    
+/* Centering the texts for both desktop and mobile */
+.emotion-selector {
+    text-align: center;
+    padding: 20px;
+}
+
+.emotion-selector h1, .emotion-selector p {
+    font-family: 'Moonlight', sans-serif;
+    font-size: 2em; /* Adjust as needed for visibility */
+    color: white;
+    text-align: center;
+}
+
+/* Additional media query for responsiveness */
+@media (max-width: 768px) {
+    .emotion-selector h1, .emotion-selector p {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
