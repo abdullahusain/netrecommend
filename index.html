@@ -25,7 +25,7 @@
         <!-- Login Container -->
         <div id="login-container" class="login-container">
             <h1>Login</h1>
-            <form id="login-form" action="https://ac43-34-42-107-125.ngrok-free.app/login" method="POST">
+            <form id="login-form" action="https://8d2d-35-230-56-2.ngrok-free.app/login" method="POST">
                 <input type="text" name="email" placeholder="Email Id" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" class="btn btn-primary">Sign In</button>
@@ -38,7 +38,7 @@
         <!-- Sign Up Container (Initially Hidden) -->
         <div id="signup-container" class="signup-container" style="display: none;">
             <h1>Sign Up</h1>
-            <form id="signup-form" action="https://ac43-34-42-107-125.ngrok-free.app/signup" method="POST">
+            <form id="signup-form" action="https://8d2d-35-230-56-2.ngrok-free.app/signup" method="POST">
                 <input type="email" name="email" placeholder="Email Id" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
@@ -98,7 +98,7 @@
 
         // Handle emotion-based recommendations
         function fetchMovies(emotion) {
-            fetch(`https://ac43-34-42-107-125.ngrok-free.app/recommend/${emotion}`)
+            fetch(`https://8d2d-35-230-56-2.ngrok-free.app/recommend/${emotion}`)
                 .then(response => response.json())
                 .then(movies => {
                     const moviesContainer = document.getElementById("movies-container");
