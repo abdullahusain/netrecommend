@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Moonlight&family=DynaPuff&family=Fredoka&family=Playfair+Display&family=ITC+Benguiat&family=Safira+March&display=swap" rel="stylesheet">
     <!-- Add custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for better UX */
+        img {
+            object-fit: cover;
+        }
+        .loading-state {
+            font-style: italic;
+            color: gray;
+        }
+        .movie-details h5 {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <header class="d-flex justify-content-between align-items-center">
@@ -25,8 +38,8 @@
         <!-- Login Container -->
         <div id="login-container" class="login-container">
             <h1>Login</h1>
-            <form id="login-form" action="https://905b-103-165-21-17.ngrok-free.app/login" method="POST">
-                <input type="text" name="email" placeholder="Email Id" required>
+            <form id="login-form">
+                <input type="email" name="email" placeholder="Email Id" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" class="btn btn-primary">Sign In</button>
             </form>
@@ -38,7 +51,7 @@
         <!-- Sign Up Container (Initially Hidden) -->
         <div id="signup-container" class="signup-container" style="display: none;">
             <h1>Sign Up</h1>
-            <form id="signup-form" action="https://905b-103-165-21-17.ngrok-free.app/signup" method="POST">
+            <form id="signup-form">
                 <input type="email" name="email" placeholder="Email Id" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
@@ -70,9 +83,6 @@
                 <div class="text-center mt-5">
                     <h1 class="moonlight">Here are your movies!</h1>
                 </div>
-                <div class="text-center mt-3">
-                    <div class="title">EMOTION BASED<br>MOVIE<br>RECOMMENDER</div>
-                </div>
                 <div class="row mt-5" id="movies-container">
                     <!-- Movie recommendations will be inserted here dynamically -->
                 </div>
@@ -83,26 +93,84 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS for Handling Login, Sign-Up, and Movie Recommendations -->
+    <!-- Custom JS -->
     <script>
+        // Show signup form
         document.getElementById('show-signup').addEventListener('click', function() {
             document.getElementById('login-container').style.display = 'none';
             document.getElementById('signup-container').style.display = 'block';
         });
 
+        // Handle logout
         document.getElementById('logout-btn').addEventListener('click', function() {
             document.getElementById('main-container').style.display = 'none';
             document.getElementById('login-container').style.display = 'block';
             document.getElementById('logout-btn').style.display = 'none';
         });
 
+        // Handle login submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+
+            fetch("https://905b-103-165-21-17.ngrok-free.app/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === "Login successful") {
+                    console.log("Login Success:", data);
+                    document.getElementById("login-container").style.display = "none";
+                    document.getElementById("main-container").style.display = "block";
+                    document.getElementById("logout-btn").style.display = "block";
+                } else {
+                    alert("Invalid email or password!");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
+        // Handle signup submission
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+
+            fetch("https://905b-103-165-21-17.ngrok-free.app/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === "User registered successfully") {
+                    alert("Signup successful! Please log in.");
+                    document.getElementById("signup-container").style.display = "none";
+                    document.getElementById("login-container").style.display = "block";
+                } else {
+                    alert("User already exists!");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
         // Handle emotion-based recommendations
         function fetchMovies(emotion) {
+            const moviesContainer = document.getElementById("movies-container");
+            moviesContainer.innerHTML = "<p class='loading-state'>Loading movies...</p>";
+
             fetch(`https://905b-103-165-21-17.ngrok-free.app/recommend/${emotion}`)
                 .then(response => response.json())
                 .then(movies => {
-                    const moviesContainer = document.getElementById("movies-container");
-                    moviesContainer.innerHTML = ""; // Clear previous results
+                    moviesContainer.innerHTML = ""; // Clear loading state
+
+                    if (movies.length === 0) {
+                        moviesContainer.innerHTML = "<p>No movies found for this emotion.</p>";
+                        return;
+                    }
 
                     movies.forEach(movie => {
                         const movieBox = document.createElement("div");
@@ -112,7 +180,10 @@
                                 <div class="movie-image">
                                     <img src="${movie.image_url}" alt="${movie.name}" style="width:100%; height:200px;">
                                 </div>
-                                <div class="movie-details">${movie.name}</div>
+                                <div class="movie-details">
+                                    <h5>${movie.name}</h5>
+                                    <p>${movie.genres} | ${movie.year}</p>
+                                </div>
                             </div>
                         `;
                         moviesContainer.appendChild(movieBox);
@@ -120,7 +191,10 @@
 
                     document.getElementById("main-container").style.display = "block";
                 })
-                .catch(error => console.error("Error fetching movies:", error));
+                .catch(error => {
+                    console.error("Error fetching movies:", error);
+                    moviesContainer.innerHTML = "<p>Error loading movies. Please try again later.</p>";
+                });
         }
 
         document.querySelector(".happy").addEventListener("click", function() {
