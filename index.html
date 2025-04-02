@@ -114,7 +114,7 @@
             const email = event.target.email.value;
             const password = event.target.password.value;
 
-            fetch("https://0f50-103-165-20-44.ngrok-free.app/login", {
+            fetch("https://nettflixer-backend.onrender.com/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })
@@ -139,7 +139,7 @@
             const email = event.target.email.value;
             const password = event.target.password.value;
 
-            fetch("https://0f50-103-165-20-44.ngrok-free.app/signup", {
+            fetch("https://nettflixer-backend.onrender.com/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })
@@ -164,7 +164,7 @@
 
     console.log(`Fetching movies for emotion: ${emotion}`);
 
-    fetch(`https://0f50-103-165-20-44.ngrok-free.app/recommend/${emotion}`)
+    fetch(`https://nettflixer-backend.onrender.com/recommend/${emotion}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
