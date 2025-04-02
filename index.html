@@ -114,7 +114,7 @@
             const email = event.target.email.value;
             const password = event.target.password.value;
 
-            fetch("https://c412-2409-40f3-1b-1f3d-34e4-97d8-4543-b96b.ngrok-free.app/login", {
+            fetch("https://1ebb-103-165-20-44.ngrok-free.app/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })
@@ -139,7 +139,7 @@
             const email = event.target.email.value;
             const password = event.target.password.value;
 
-            fetch("https://c412-2409-40f3-1b-1f3d-34e4-97d8-4543-b96b.ngrok-free.app/signup", {
+            fetch("https://1ebb-103-165-20-44.ngrok-free.app/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })
@@ -162,7 +162,7 @@
     const moviesContainer = document.getElementById("movies-container");
     moviesContainer.innerHTML = "<p class='loading-state'>Loading movies...</p>";
 
-    fetch(`https://c412-2409-40f3-1b-1f3d-34e4-97d8-4543-b96b.ngrok-free.app/recommend/${emotion}`)
+    fetch(`https://1ebb-103-165-20-44.ngrok-free.app/recommend/${emotion}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
